@@ -1,0 +1,9 @@
+{:scenario-id "low-budget-8h"
+ :description "Constrained-budget scenario for cost-pressure testing."
+ :shift-length-hours 8
+ :hourly-arrival-rates [8 10 12 14 14 12 10 8]
+ :nurse-service-rate-per-hour 4.5
+ :pit-service-rate-per-hour 5.5
+ :nurse-hourly-cost 58.0
+ :pit-hourly-cost 125.0
+ :budget-cap-per-shift 1800.0}

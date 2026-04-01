@@ -1,0 +1,7 @@
+source,fact,use_in_project
+Green et al. 2006,ED arrival rates vary strongly over the day; staffing should track time-of-day demand,Motivates hourly arrival profiles and shift-block staffing
+Green et al. 2006,Queueing-based reallocation reduced LWBS despite only modest increase/reallocation of provider hours,"Motivates staffing-shape experiments, not just total hours"
+Izady & Worthington 2012,A&E staffing is a time-dependent queueing network problem with multiple resource types,Motivates why the future genome should include time blocks and possibly multiple roles
+Ghanes et al. 2015,DES + staffing optimization under budget can use LOS and urgent-patient constraints together,Motivates weighted fitness plus urgent-service fairness / case-based evaluation
+Otto et al. 2022,LOS is a widely used ED quality indicator influenced by patient and organizational factors,Motivates reporting time-in-system but being careful with scope wording
+Chmielewski & Moretz 2022,Observed ESI distributions vary across hospitals; triage mix is not one-size-fits-all,Motivates caution if acuity classes are later introduced

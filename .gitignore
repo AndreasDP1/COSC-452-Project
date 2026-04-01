@@ -1,0 +1,16 @@
+# OS / editor
+.DS_Store
+
+# Clojure / tooling caches
+.cpcache/
+.lsp/
+.clj-kondo/.cache/
+
+# Results / generated outputs
+results/placeholders/*.csv
+
+# Real data: avoid committing raw workbook + regenerated processed tables by default
+data/raw/real/*.xlsx
+data/processed/real/*.csv
+data/processed/real/*.json
+
