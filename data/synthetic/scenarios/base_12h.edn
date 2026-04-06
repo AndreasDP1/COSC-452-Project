@@ -4,6 +4,10 @@
  :hourly-arrival-rates [4 5 6 8 10 12 13 13 11 9 7 5]
  :nurse-service-rate-per-hour 8.0
  :pit-service-rate-per-hour 11.5
- :nurse-hourly-cost 43.0
- :pit-hourly-cost 180.0
+ :entry-nurse-hourly-cost 31.64
+ :average-nurse-hourly-cost 44.5
+ :senior-nurse-hourly-cost 50.04
+ :low-pit-hourly-cost 84.46
+ :average-pit-hourly-cost 144
+ :high-pit-hourly-cost 245
  :budget-cap-per-shift 3600.0}
