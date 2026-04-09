@@ -2,8 +2,12 @@
  :description "Baseline 12-hour Stage A scenario with daytime peak."
  :shift-length-hours 12
  :hourly-arrival-rates [4 5 6 8 10 12 13 13 11 9 7 5]
- :nurse-service-rate-per-hour 8.0
- :pit-service-rate-per-hour 11.5
+ :entry-nurse-service-rate-per-hour   4.5
+ :average-nurse-service-rate-per-hour 6.0
+ :senior-nurse-service-rate-per-hour  7.5
+ :low-pit-service-rate-per-hour       7.0
+ :average-pit-service-rate-per-hour   10.5
+ :high-pit-service-rate-per-hour      13.5 
  :entry-nurse-hourly-cost 31.64
  :average-nurse-hourly-cost 44.5
  :senior-nurse-hourly-cost 50.04

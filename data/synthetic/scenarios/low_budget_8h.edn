@@ -2,8 +2,12 @@
  :description "Constrained-budget scenario for cost-pressure testing."
  :shift-length-hours 8
  :hourly-arrival-rates [8 10 12 14 14 12 10 8]
- :nurse-service-rate-per-hour 8.0
- :pit-service-rate-per-hour 11.5
+ :entry-nurse-service-rate-per-hour   4.5
+ :average-nurse-service-rate-per-hour 6.0
+ :senior-nurse-service-rate-per-hour  7.5
+ :low-pit-service-rate-per-hour       7.0
+ :average-pit-service-rate-per-hour   10.5
+ :high-pit-service-rate-per-hour      13.5
  :entry-nurse-hourly-cost 31.64
  :average-nurse-hourly-cost 44.5
  :senior-nurse-hourly-cost 50.04
