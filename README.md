@@ -1,41 +1,60 @@
-# ER triage staffing simulation
+# ER Staffing Simulation + Evolutionary Optimization
 
-Discrete-event simulation of an ED triage subsystem (one queue, nurses + PIT as servers) with time-varying arrivals and stochastic service times. Run staffing experiments and export CSV result tables (wait time, time in system, queue length, utilization, idle time, cost, budget feasibility).
+This project models ER staffing as a week-long discrete-event simulation and optimizes a 7-role staffing genome using a genetic algorithm (lexicase or tournament selection).
 
-## Start here
+Core model pieces:
 
-**Read [`docs/project_instructions.md`](docs/project_instructions.md)** for the model spec, file map, data description (real-derived + synthetic), and the exact commands to run.
+- Patient arrivals by hour (synthetic or real-data-shaped profile)
+- Condition-dependent routing (specialist-first with overload fallback)
+- Event windows that shift demand composition/intensity
+- Daily staffing budget constraints
+- GA search over role counts (`rt`, `cardio`, `radio`, `mh`, `physician`, `pa`, `nurse`)
 
-## Quick start
+## Quick Start
 
-**Clojure** (needs JDK + [Clojure CLI](https://clojure.org/guides/install_clojure)):
+Requirements:
+
+- JDK 11+
+- [Clojure CLI](https://clojure.org/guides/install_clojure)
+- Python 3 (for preprocessing/plot scripts)
+
+Run from repository root:
 
 ```bash
 clojure -M:test
 clojure -M -m er-staffing.main
-clojure -M -m er-staffing.experiments.baseline-grid
+./scripts/generate_presentation_artifacts.sh --quick
 ```
 
-If `clojure -M:test` does not run tests (e.g. opens a REPL), try `clojure -M:run-tests`.
-
-**Python** (preprocess workbook → CSV/JSON):
+For full outputs (longer runtime):
 
 ```bash
-python3 -m pip install -r requirements.txt
-python3 scripts/preprocess_real_data.py
+./scripts/generate_presentation_artifacts.sh
 ```
 
-## Core question
+## Main Commands
 
-If triage has a **fixed staffing budget**, how should the department allocate **triage nurses** and **physicians-in-triage** so patients are seen sooner, without overspending or pointless idle time—under **time-varying arrivals**, **random service times**, and **multiple objectives**?
+- `clojure -M:test`: run test suite
+- `clojure -M -m er-staffing.main`: single demo run
+- `clojure -M:evo`: evolution report batch
+- `clojure -M:pres`: presentation report batch
+- `clojure -M:pres -- --quick`: faster presentation batch
+- `python3 scripts/preprocess_real_data.py`: refresh real hourly profile CSV
+- `python3 scripts/plot_presentation_figures.py`: regenerate figures from CSV results
 
-## Repo map (abbrev.)
+## Outputs
 
-| Path | Contents |
-|------|----------|
-| `src/er_staffing/` | Simulation (Stage A), metrics, fitness, experiments |
-| `test/` | Tests + `runner.clj` for `clojure -M:test` |
-| `data/synthetic/` | EDN scenarios and arrival profiles |
-| `data/processed/real/` | Outputs from `scripts/preprocess_real_data.py` |
-| `results/placeholders/` | e.g. `base_grid_results.csv` from baseline grid |
-| `docs/` | `project_instructions.md` (single consolidated spec) |
+Generated outputs are written under `results/`, including:
+
+- `results/evolution_runs.csv`
+- `results/presentation_ga_runs.csv`
+- `results/presentation_hand_baseline.csv`
+- `results/presentation_5case_errors.csv`
+- `results/figures/*.png`
+- `results/FINDINGS.md`
+
+## Documentation
+
+- `docs/COMPLETE_PROJECT_DEEP_DIVE.md` (primary walkthrough)
+- `docs/SIMULATION_MODEL.md` (simulation mechanics)
+- `docs/CODEMAP.md` (file map)

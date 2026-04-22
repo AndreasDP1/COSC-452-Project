@@ -1,0 +1,8 @@
+Best genome (5-case lexicase run):
+{:rt 8, :cardio 2, :radio 0, :mh 4, :physician 1, :pa 8, :nurse 3}
+
+Per-scenario errors (same order as scenarios vector):
+[0.15876902641162854 0.19532537897845137 0.10217281629471074 0.15876902641162854 0.16513121565098265]
+
+Scenario ids:
+["week-v1" "week-v1-real-hourly" "week-severe-respiratory" "week-tight-budget" "week-high-demand"]

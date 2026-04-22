@@ -1,0 +1,34 @@
+;; Bounds: wide enough that exhaustive enumeration is impractical.
+;; Search space order: product of (hi-lo+1) per gene — on the order of 10^10+.
+
+{:genome-bounds
+ {:rt [0 18]
+  :cardio [0 18]
+  :radio [0 18]
+  :mh [0 18]
+  :physician [1 35]
+  :pa [0 28]
+  :nurse [2 55]}
+
+ :ga-defaults
+ {:population-size 24
+  :generations 12
+  :mutation-rate 0.22
+  :crossover-rate 0.88
+  :elite 2
+  :replications 2
+  :seed 42
+  ;; :lexicase = parent selection + crossover + mutation
+  ;; :lexicase-full = environmental lexicase (whole next generation via lexicase without replacement)
+  :selection :lexicase}
+
+ ;; Smaller run for CI / quick check
+ :ga-fast
+ {:population-size 8
+  :generations 4
+  :mutation-rate 0.25
+  :crossover-rate 0.85
+  :elite 1
+  :replications 1
+  :seed 7
+  :selection :lexicase}}

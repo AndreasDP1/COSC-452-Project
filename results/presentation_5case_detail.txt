@@ -1,0 +1,8 @@
+Best genome (5-case run):
+{:rt 8, :cardio 0, :radio 0, :mh 4, :physician 1, :pa 0, :nurse 30}
+
+Per-scenario errors:
+[0.23171001618603543 0.40597500570778416 0.1314921779091574 0.22879841133183126 0.22926954822038909]
+
+Scenario ids:
+["week-v1-pres" "week-v1-pres-real-hourly" "week-severe-respiratory" "week-tight-budget" "week-high-demand"]

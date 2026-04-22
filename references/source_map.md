@@ -10,9 +10,7 @@
 - `data/processed/real/daily_hourly_arrivals_from_sample.csv`
 - `data/processed/real/hospital_wait_sample_summary.json`
 
-## Synthetic scenario files
-- `data/synthetic/scenarios/base_8h.edn`
-- `data/synthetic/scenarios/base_12h.edn`
-- `data/synthetic/scenarios/high_demand_12h.edn`
-- `data/synthetic/scenarios/low_budget_8h.edn`
-- `data/synthetic/scenarios/evening_peak_12h.edn`
+## Week scenarios (simulator)
+
+- `data/synthetic/v2/week_scenario.edn` — default
+- `data/synthetic/v2/ga_config.edn` — genome bounds + GA hyperparameters

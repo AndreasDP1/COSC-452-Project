@@ -2,4 +2,6 @@
  :deps {org.clojure/clojure {:mvn/version "1.11.1"}
         org.clojure/data.csv {:mvn/version "1.1.0"}}
  :aliases {:test {:main-opts ["-m" "runner"]}
-           :run-tests {:main-opts ["-m" "runner"]}}}
+           :run-tests {:main-opts ["-m" "runner"]}
+           :evo {:main-opts ["-m" "er-staffing.experiments.evolution-run"]}
+           :pres {:main-opts ["-m" "er-staffing.experiments.presentation-run"]}}}
