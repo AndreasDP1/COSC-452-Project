@@ -4,4 +4,5 @@
  :aliases {:test {:main-opts ["-m" "runner"]}
            :run-tests {:main-opts ["-m" "runner"]}
            :evo {:main-opts ["-m" "er-staffing.experiments.evolution-run"]}
-           :pres {:main-opts ["-m" "er-staffing.experiments.presentation-run"]}}}
+           :pres {:main-opts ["-m" "er-staffing.experiments.presentation-run"]}
+           :dataset {:main-opts ["-m" "er-staffing.experiments.model-dataset"]}}}
