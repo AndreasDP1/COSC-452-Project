@@ -1,0 +1,26 @@
+{
+  "n_rows": 200,
+  "n_train": 160,
+  "n_test": 40,
+  "test_size": 0.2,
+  "mae_per_role": {
+    "best_rt": 2.5,
+    "best_cardio": 1.35,
+    "best_radio": 1.3,
+    "best_mh": 2.25,
+    "best_physician": 0.825,
+    "best_pa": 2.675,
+    "best_nurse": 4.975
+  },
+  "mean_mae": 2.267857142857143,
+  "exact_match_rate": 0.0,
+  "per_role_accuracy": {
+    "best_rt": 0.175,
+    "best_cardio": 0.325,
+    "best_radio": 0.3,
+    "best_mh": 0.1,
+    "best_physician": 0.5,
+    "best_pa": 0.125,
+    "best_nurse": 0.0
+  }
+}
