@@ -12,7 +12,7 @@ Emergency department staffing is difficult because demand changes by hour, patie
 ## Process
 We implemented a discrete-event simulation over a 168-hour horizon with queue dynamics, specialist/generalist routing, event shocks, and daily budget constraints. We then integrated a GA pipeline with mutation, crossover, and selection variants, including a no-budget-repair ablation for comparison (fixing staffing so it stays under budget and produce optimal solution).  
 
-Before building the ML model, we ran structured GA comparisons across scenario sets (single-case, 2-case, 5-case), and compared lexicase vs tournament on a matched 2-case setup and recorded plots and results/metrics. 
+Before building the ML model, we ran structured GA comparisons across scenario sets (single-case, 2-case, 5-case), and compared lexicase vs tournament on a matched 2-case setup with plots and recorded metrics.
 
 After that, we generated from a script a large amount of varied scenarios and ran them against the simulation and GA to get the optimal genome and create a huge training dataset. Then trained a multi-output random-forest surrogate model.
 

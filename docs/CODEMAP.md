@@ -9,7 +9,10 @@ Primary team doc: [`COMPLETE_PROJECT_DEEP_DIVE.md`](COMPLETE_PROJECT_DEEP_DIVE.m
 | `clojure -M -m er-staffing.main` | Quick demo: one staffing, `run-week`, fitness |
 | `clojure -M:evo` | GA comparison + writes `results/evolution_report.md` and `results/evolution_runs.csv` |
 | `clojure -M:pres` | Presentation bundle + writes `results/presentation_*.csv` |
+| `clojure -M:dataset -- --count ...` | Bulk scenario generation + GA labels for surrogate-model training |
 | `./scripts/generate_presentation_artifacts.sh` | Runs `:pres`, `:evo`, and plot generation |
+| `python3 scripts/train_genome_model.py --input-csv ...` | Train scenario -> staffing surrogate model |
+| `python3 scripts/predict_genome.py --features-json ...` | Predict 7-role staffing genome from one feature JSON |
 | `clojure -M:test` | All tests |
 
 ## Source layout (`src/er_staffing/`)
@@ -34,6 +37,8 @@ Primary team doc: [`COMPLETE_PROJECT_DEEP_DIVE.md`](COMPLETE_PROJECT_DEEP_DIVE.m
 | `evolution/ga.clj` | Full GA loop |
 | `experiments/evolution_run.clj` | Compare synthetic vs real-hourly vs lexicase vs random events |
 | `experiments/presentation_run.clj` | Presentation experiment bundle |
+| `experiments/model_dataset.clj` | Sample synthetic scenarios, run GA, write feature+label CSV rows |
+| `experiments/scenario_features.clj` | Convert scenario EDN -> model feature JSON |
 | `main.clj` | CLI demo |
 
 ## Data
@@ -42,6 +47,7 @@ Primary team doc: [`COMPLETE_PROJECT_DEEP_DIVE.md`](COMPLETE_PROJECT_DEEP_DIVE.m
 |------|---------|
 | `data/synthetic/v2/week_scenario.edn` | Default week + fixed disaster windows |
 | `data/synthetic/v2/ga_config.edn` | Gene bounds + GA defaults |
+| `data/synthetic/v2/model_dataset/*.edn` | Scenario corpus used for model dataset generation/audit |
 | `data/processed/real/hourly_arrival_profile_from_sample.csv` | From `scripts/preprocess_real_data.py` |
 
 ## Results (generated)
@@ -54,5 +60,8 @@ Primary team doc: [`COMPLETE_PROJECT_DEEP_DIVE.md`](COMPLETE_PROJECT_DEEP_DIVE.m
 | `results/presentation_hand_baseline.csv` | Hand baseline rows across scenarios |
 | `results/presentation_5case_errors.csv` | Per-scenario 5-case errors |
 | `results/figures/*.png` | Generated figures from `scripts/plot_presentation_figures.py` |
+| `results/model_training_dataset_all.csv` | Merged scenario-feature + GA-best-genome training table |
+| `results/models/genome_predictor.joblib` | Serialized sklearn pipeline for prediction |
+| `results/models/genome_predictor_metrics.json` | Train/test metrics from latest model run |
 
 See also [`COMPLETE_PROJECT_DEEP_DIVE.md`](COMPLETE_PROJECT_DEEP_DIVE.md) and [`SIMULATION_MODEL.md`](SIMULATION_MODEL.md).
