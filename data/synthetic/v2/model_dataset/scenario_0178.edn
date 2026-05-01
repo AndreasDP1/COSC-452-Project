@@ -1,0 +1,100 @@
+{:providers
+ {:rt
+  {:kind :specialist,
+   :hourly-cost 39.0,
+   :treats #{:respiratory},
+   :base-service-rate 4.0},
+  :cardio
+  {:kind :specialist,
+   :hourly-cost 200.0,
+   :treats #{:cardio},
+   :base-service-rate 3.5},
+  :radio
+  {:kind :specialist,
+   :hourly-cost 220.0,
+   :treats #{:trauma},
+   :base-service-rate 3.5},
+  :mh
+  {:kind :specialist,
+   :hourly-cost 32.0,
+   :treats #{:psych},
+   :base-service-rate 4.0},
+  :physician
+  {:kind :generalist,
+   :hourly-cost 250.0,
+   :treats :all,
+   :base-service-rate 3.0},
+  :pa
+  {:kind :generalist,
+   :hourly-cost 87.0,
+   :treats :all,
+   :base-service-rate 3.2},
+  :nurse
+  {:kind :generalist,
+   :hourly-cost 43.0,
+   :treats :all,
+   :base-service-rate 3.8}},
+ :events
+ [{:id :ds-evt-0,
+   :start-hour 95.0,
+   :duration 13.0,
+   :arrival-multiplier 1.0,
+   :condition-multipliers {:respiratory 2.0}}
+  {:id :ds-evt-1,
+   :start-hour 104.0,
+   :duration 21.0,
+   :arrival-multiplier 1.0,
+   :condition-multipliers {:cardio 1.6}}
+  {:id :ds-evt-2,
+   :start-hour 22.0,
+   :duration 29.0,
+   :arrival-multiplier 1.08,
+   :condition-multipliers {:trauma 2.6, :respiratory 1.2}}
+  {:id :ds-evt-3,
+   :start-hour 4.0,
+   :duration 24.0,
+   :arrival-multiplier 1.0,
+   :condition-multipliers {:psych 2.2}}],
+ :hourly-arrival-rates
+ [0.0
+  0.0
+  0.0
+  0.0
+  0.0
+  0.0
+  0.0
+  0.22067257631529472
+  49.29345215889112
+  90.47061784331873
+  74.19011790494181
+  72.99627028296769
+  21.445523759512643
+  6.876716848339567
+  44.12311534794259
+  33.60820436301724
+  20.483515438129366
+  3.2319264356583663
+  57.72012267854164
+  28.07060300492766
+  28.062710163782434
+  8.87780508122572
+  4.620469645980192
+  0.7141080793047793],
+ :daily-budget-cap 119963.13638437878,
+ :rate-multipliers
+ {:specialist-match 1.5,
+  :specialist-mismatch 0.5,
+  :physician 1.0,
+  :pa 0.75,
+  :nurse 0.5},
+ :scenario-id "ds-0028-real",
+ :condition-probs-baseline
+ {:respiratory 0.2170674171039406,
+  :cardio 0.08481002607371083,
+  :trauma 0.1769862632964921,
+  :psych 0.2624525444109431,
+  :generic 0.2586837491149133},
+ :horizon-hours 168,
+ :base-arrival-rate-per-hour 22.708581317199872,
+ :routing
+ {:queue-threshold 13, :wait-threshold-hours 1.507326151364674}}
