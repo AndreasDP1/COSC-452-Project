@@ -1,0 +1,95 @@
+{:providers
+ {:rt
+  {:kind :specialist,
+   :hourly-cost 39.0,
+   :treats #{:respiratory},
+   :base-service-rate 4.0},
+  :cardio
+  {:kind :specialist,
+   :hourly-cost 200.0,
+   :treats #{:cardio},
+   :base-service-rate 3.5},
+  :radio
+  {:kind :specialist,
+   :hourly-cost 220.0,
+   :treats #{:trauma},
+   :base-service-rate 3.5},
+  :mh
+  {:kind :specialist,
+   :hourly-cost 32.0,
+   :treats #{:psych},
+   :base-service-rate 4.0},
+  :physician
+  {:kind :generalist,
+   :hourly-cost 250.0,
+   :treats :all,
+   :base-service-rate 3.0},
+  :pa
+  {:kind :generalist,
+   :hourly-cost 87.0,
+   :treats :all,
+   :base-service-rate 3.2},
+  :nurse
+  {:kind :generalist,
+   :hourly-cost 43.0,
+   :treats :all,
+   :base-service-rate 3.8}},
+ :events
+ [{:id :ds-evt-0,
+   :start-hour 134.0,
+   :duration 17.0,
+   :arrival-multiplier 1.0,
+   :condition-multipliers {:respiratory 2.0}}
+  {:id :ds-evt-1,
+   :start-hour 52.0,
+   :duration 12.0,
+   :arrival-multiplier 1.0,
+   :condition-multipliers {:cardio 1.6}}
+  {:id :ds-evt-2,
+   :start-hour 18.0,
+   :duration 6.0,
+   :arrival-multiplier 1.08,
+   :condition-multipliers {:trauma 2.6, :respiratory 1.2}}],
+ :hourly-arrival-rates
+ [0.0
+  0.0
+  0.0
+  0.0
+  0.0
+  0.0
+  0.0
+  0.3328137411450333
+  88.45292295643735
+  119.10400465533552
+  87.50567479198071
+  78.72323820694035
+  36.02540155095218
+  11.519559598163411
+  61.70115551343489
+  50.63019168283253
+  31.826293061246286
+  4.262034996177791
+  49.22431122865196
+  55.19292583168282
+  31.489555810151682
+  14.36688735953148
+  6.582985938294037
+  0.8203646073749234],
+ :daily-budget-cap 83821.78720141333,
+ :rate-multipliers
+ {:specialist-match 1.5,
+  :specialist-mismatch 0.5,
+  :physician 1.0,
+  :pa 0.75,
+  :nurse 0.5},
+ :scenario-id "ds-0005-real",
+ :condition-probs-baseline
+ {:respiratory 0.11712815588236627,
+  :cardio 0.11009270676535014,
+  :trauma 0.3112344814775834,
+  :psych 0.3057072601893886,
+  :generic 0.15583739568531152},
+ :horizon-hours 168,
+ :base-arrival-rate-per-hour 30.323346730430533,
+ :routing
+ {:queue-threshold 16, :wait-threshold-hours 2.012917740899722}}

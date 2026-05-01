@@ -1,0 +1,95 @@
+{:providers
+ {:rt
+  {:kind :specialist,
+   :hourly-cost 39.0,
+   :treats #{:respiratory},
+   :base-service-rate 4.0},
+  :cardio
+  {:kind :specialist,
+   :hourly-cost 200.0,
+   :treats #{:cardio},
+   :base-service-rate 3.5},
+  :radio
+  {:kind :specialist,
+   :hourly-cost 220.0,
+   :treats #{:trauma},
+   :base-service-rate 3.5},
+  :mh
+  {:kind :specialist,
+   :hourly-cost 32.0,
+   :treats #{:psych},
+   :base-service-rate 4.0},
+  :physician
+  {:kind :generalist,
+   :hourly-cost 250.0,
+   :treats :all,
+   :base-service-rate 3.0},
+  :pa
+  {:kind :generalist,
+   :hourly-cost 87.0,
+   :treats :all,
+   :base-service-rate 3.2},
+  :nurse
+  {:kind :generalist,
+   :hourly-cost 43.0,
+   :treats :all,
+   :base-service-rate 3.8}},
+ :events
+ [{:id :ds-evt-0,
+   :start-hour 52.0,
+   :duration 17.0,
+   :arrival-multiplier 1.0,
+   :condition-multipliers {:respiratory 2.0}}
+  {:id :ds-evt-1,
+   :start-hour 64.0,
+   :duration 32.0,
+   :arrival-multiplier 1.0,
+   :condition-multipliers {:cardio 1.6}}
+  {:id :ds-evt-2,
+   :start-hour 0.0,
+   :duration 29.0,
+   :arrival-multiplier 1.08,
+   :condition-multipliers {:trauma 2.6, :respiratory 1.2}}],
+ :hourly-arrival-rates
+ [0.0
+  0.0
+  0.0
+  0.0
+  0.0
+  0.0
+  0.0
+  0.2592587259177791
+  98.0819158760945
+  118.86527946559956
+  118.11609240970246
+  74.34921311548163
+  32.24119368875897
+  14.982154102679036
+  71.88984746132925
+  60.962405653094656
+  36.322916417956556
+  7.616489802874057
+  61.42809761364217
+  74.63829780338187
+  34.12032723547416
+  10.10814250108978
+  7.4250135899373255
+  0.7471930670060518],
+ :daily-budget-cap 92253.3922264794,
+ :rate-multipliers
+ {:specialist-match 1.5,
+  :specialist-mismatch 0.5,
+  :physician 1.0,
+  :pa 0.75,
+  :nurse 0.5},
+ :scenario-id "ds-0020-real",
+ :condition-probs-baseline
+ {:respiratory 0.08467679181829794,
+  :cardio 0.31531921906788324,
+  :trauma 0.26960442903539805,
+  :psych 0.07112495942862002,
+  :generic 0.25927460064980085},
+ :horizon-hours 168,
+ :base-arrival-rate-per-hour 34.256409938750835,
+ :routing
+ {:queue-threshold 9, :wait-threshold-hours 1.6332628855732452}}

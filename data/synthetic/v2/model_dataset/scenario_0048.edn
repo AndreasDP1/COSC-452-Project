@@ -1,0 +1,80 @@
+{:providers
+ {:rt
+  {:kind :specialist,
+   :hourly-cost 39.0,
+   :treats #{:respiratory},
+   :base-service-rate 4.0},
+  :cardio
+  {:kind :specialist,
+   :hourly-cost 200.0,
+   :treats #{:cardio},
+   :base-service-rate 3.5},
+  :radio
+  {:kind :specialist,
+   :hourly-cost 220.0,
+   :treats #{:trauma},
+   :base-service-rate 3.5},
+  :mh
+  {:kind :specialist,
+   :hourly-cost 32.0,
+   :treats #{:psych},
+   :base-service-rate 4.0},
+  :physician
+  {:kind :generalist,
+   :hourly-cost 250.0,
+   :treats :all,
+   :base-service-rate 3.0},
+  :pa
+  {:kind :generalist,
+   :hourly-cost 87.0,
+   :treats :all,
+   :base-service-rate 3.2},
+  :nurse
+  {:kind :generalist,
+   :hourly-cost 43.0,
+   :treats :all,
+   :base-service-rate 3.8}},
+ :events [],
+ :hourly-arrival-rates
+ [0.0
+  0.0
+  0.0
+  0.0
+  0.0
+  0.0
+  0.0
+  0.18186649442693573
+  61.1222872938607
+  47.149446056806546
+  37.32015421457987
+  56.737460104386095
+  24.49651997596135
+  6.301728036557295
+  33.64068023826553
+  23.77041501922342
+  19.934782606230737
+  3.3810933086622517
+  32.064490176499824
+  32.697834840680194
+  14.340241622918183
+  7.101035535573364
+  3.347322387648379
+  0.3274904827067936],
+ :daily-budget-cap 77892.36819579327,
+ :rate-multipliers
+ {:specialist-match 1.5,
+  :specialist-mismatch 0.5,
+  :physician 1.0,
+  :pa 0.75,
+  :nurse 0.5},
+ :scenario-id "ds-0008-real",
+ :condition-probs-baseline
+ {:respiratory 0.23130785409889323,
+  :cardio 0.06048035918351379,
+  :trauma 0.13922794889125886,
+  :psych 0.2905203812176417,
+  :generic 0.27846345660869243},
+ :horizon-hours 168,
+ :base-arrival-rate-per-hour 16.829785349791145,
+ :routing
+ {:queue-threshold 14, :wait-threshold-hours 1.1064680746362026}}

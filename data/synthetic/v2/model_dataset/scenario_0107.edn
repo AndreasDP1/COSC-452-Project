@@ -1,0 +1,95 @@
+{:providers
+ {:rt
+  {:kind :specialist,
+   :hourly-cost 39.0,
+   :treats #{:respiratory},
+   :base-service-rate 4.0},
+  :cardio
+  {:kind :specialist,
+   :hourly-cost 200.0,
+   :treats #{:cardio},
+   :base-service-rate 3.5},
+  :radio
+  {:kind :specialist,
+   :hourly-cost 220.0,
+   :treats #{:trauma},
+   :base-service-rate 3.5},
+  :mh
+  {:kind :specialist,
+   :hourly-cost 32.0,
+   :treats #{:psych},
+   :base-service-rate 4.0},
+  :physician
+  {:kind :generalist,
+   :hourly-cost 250.0,
+   :treats :all,
+   :base-service-rate 3.0},
+  :pa
+  {:kind :generalist,
+   :hourly-cost 87.0,
+   :treats :all,
+   :base-service-rate 3.2},
+  :nurse
+  {:kind :generalist,
+   :hourly-cost 43.0,
+   :treats :all,
+   :base-service-rate 3.8}},
+ :events
+ [{:id :ds-evt-0,
+   :start-hour 116.0,
+   :duration 30.0,
+   :arrival-multiplier 1.0,
+   :condition-multipliers {:respiratory 2.0}}
+  {:id :ds-evt-1,
+   :start-hour 131.0,
+   :duration 22.0,
+   :arrival-multiplier 1.0,
+   :condition-multipliers {:cardio 1.6}}
+  {:id :ds-evt-2,
+   :start-hour 126.0,
+   :duration 23.0,
+   :arrival-multiplier 1.08,
+   :condition-multipliers {:trauma 2.6, :respiratory 1.2}}],
+ :hourly-arrival-rates
+ [0.0
+  0.0
+  0.0
+  0.0
+  0.0
+  0.0
+  0.0
+  0.10914964890183439
+  29.880548912810422
+  45.79439309279616
+  27.13692123495607
+  28.989314253084444
+  15.408242059626229
+  3.0848912811508895
+  20.968554840594898
+  16.21302153450796
+  10.357888604475386
+  2.039037211659419
+  18.531301321954075
+  15.55764109623795
+  12.903557360930995
+  5.017303298903673
+  2.243567716163631
+  0.19851589765524702],
+ :daily-budget-cap 89191.56269923087,
+ :rate-multipliers
+ {:specialist-match 1.5,
+  :specialist-mismatch 0.5,
+  :physician 1.0,
+  :pa 0.75,
+  :nurse 0.5},
+ :scenario-id "ds-0007-real",
+ :condition-probs-baseline
+ {:respiratory 0.22584880816390335,
+  :cardio 0.3292799574576936,
+  :trauma 0.15588849631584983,
+  :psych 0.09117889484430519,
+  :generic 0.197803843218248},
+ :horizon-hours 168,
+ :base-arrival-rate-per-hour 10.601410390267054,
+ :routing
+ {:queue-threshold 14, :wait-threshold-hours 1.1578464802527975}}

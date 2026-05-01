@@ -1,0 +1,85 @@
+{:providers
+ {:rt
+  {:kind :specialist,
+   :hourly-cost 39.0,
+   :treats #{:respiratory},
+   :base-service-rate 4.0},
+  :cardio
+  {:kind :specialist,
+   :hourly-cost 200.0,
+   :treats #{:cardio},
+   :base-service-rate 3.5},
+  :radio
+  {:kind :specialist,
+   :hourly-cost 220.0,
+   :treats #{:trauma},
+   :base-service-rate 3.5},
+  :mh
+  {:kind :specialist,
+   :hourly-cost 32.0,
+   :treats #{:psych},
+   :base-service-rate 4.0},
+  :physician
+  {:kind :generalist,
+   :hourly-cost 250.0,
+   :treats :all,
+   :base-service-rate 3.0},
+  :pa
+  {:kind :generalist,
+   :hourly-cost 87.0,
+   :treats :all,
+   :base-service-rate 3.2},
+  :nurse
+  {:kind :generalist,
+   :hourly-cost 43.0,
+   :treats :all,
+   :base-service-rate 3.8}},
+ :events
+ [{:id :ds-evt-0,
+   :start-hour 124.0,
+   :duration 8.0,
+   :arrival-multiplier 1.0,
+   :condition-multipliers {:respiratory 2.0}}
+  {:id :ds-evt-1,
+   :start-hour 122.0,
+   :duration 31.0,
+   :arrival-multiplier 1.0,
+   :condition-multipliers {:cardio 1.6}}
+  {:id :ds-evt-2,
+   :start-hour 56.0,
+   :duration 35.0,
+   :arrival-multiplier 1.08,
+   :condition-multipliers {:trauma 2.6, :respiratory 1.2}}
+  {:id :ds-evt-3,
+   :start-hour 43.0,
+   :duration 18.0,
+   :arrival-multiplier 1.0,
+   :condition-multipliers {:psych 2.2}}
+  {:id :ds-evt-4,
+   :start-hour 10.0,
+   :duration 10.0,
+   :arrival-multiplier 1.12,
+   :condition-multipliers {:respiratory 4.5}}
+  {:id :ds-evt-5,
+   :start-hour 4.0,
+   :duration 21.0,
+   :arrival-multiplier 1.0,
+   :condition-multipliers {:generic 1.4, :cardio 1.2}}],
+ :daily-budget-cap 121925.71140702552,
+ :rate-multipliers
+ {:specialist-match 1.5,
+  :specialist-mismatch 0.5,
+  :physician 1.0,
+  :pa 0.75,
+  :nurse 0.5},
+ :scenario-id "ds-0003-flat",
+ :condition-probs-baseline
+ {:respiratory 0.11856586489663637,
+  :cardio 0.10295190909494857,
+  :trauma 0.262265627538984,
+  :psych 0.07553130098880154,
+  :generic 0.4406852974806295},
+ :horizon-hours 168,
+ :base-arrival-rate-per-hour 27.997647880360347,
+ :routing
+ {:queue-threshold 18, :wait-threshold-hours 1.0032563526054166}}
